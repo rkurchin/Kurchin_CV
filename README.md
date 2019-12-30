@@ -42,4 +42,4 @@ Nothing exotic here, should all be present in a standard distro.
 ## Credit where credit is due
 * The basic layout of the CV is heavily inspired by [Jerry Wang](https://www.cmu.edu/cee/people/faculty/wang.html)’s CV.
 * For the structure of the `cv.cls` file, I started from [this template](https://www.overleaf.com/articles/rishi-shahs-resume/vgxvkmxktyxn) that I found on Overleaf, which was originally developed by [Trey Hunner](https://treyhunner.com) and posted on [LaTeX Templates](https://www.latextemplates.com)
-* The 
+* The Python code for citation formatting was adapted from something I got from [Giuseppe Romano](https://github.com/romanodev) awhile ago
