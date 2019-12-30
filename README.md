@@ -17,7 +17,7 @@ This is the code I use for maintaining my CV. To see what the output looks like,
 ### Using Python scripts
 The Python code is designed to read from a `.bib` file (for Publications) and `.tsv` (for other sections). For an example of the format of these files, see the “markdown_generator” folder in [the repo for my website](https://github.com/rkurchin/rkurchin.github.io).
 
-If you use this, make sure to edit the top section `cv.py` so it knows where to find these files and any/all spellings or formats of your name that come up in your citations so that it can make them bold.
+If you use this, make sure to edit the top section of `cv.py` so it knows where to find these files and any/all spellings or formats of your name that come up in your citations so that it can make them bold.
 
 ## Requirements
 ### TeX packages 
