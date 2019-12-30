@@ -92,6 +92,7 @@ def get_citation(pubs, entry, to_bold):
         strc += '\href{''' + url + '}{' + str(data.fields['volume']) + '}, '
     if len(data.fields['pages'])> 0:
         strc += r'''\href{''' + url + r'''}{''' + str(data.fields['pages']) + '} '
+    if len(data.fields['year'])> 0:
         strc += r'''\href{''' + url + r'''}{(''' + str(data.fields['year']) + ')}'
 
     return strc
