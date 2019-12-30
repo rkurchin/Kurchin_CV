@@ -1,7 +1,7 @@
 
 ### functions for generating strings of TeX code
 def cvItem_text(date, inst, dept, descr):
-    return '\cvItem{{{date}}}{{{inst}}}{{{dept}}}{{{descr}}}\n'.format(date=date, inst=inst, dept=dept, descr=descr)
+    return '\cvItem{{{date}}}{{{inst}}}{{{dept}}}{{{descr}}}\n'.format(date=date, inst=inst, dept=dept, descr=descr).replace('&','\&')
 
 def pubsItem_text(date, num, text):
     return '\pubsItem{{{date}}}{{{num}}}{{{text}}}\n'.format(date=date, num=num, text=text)
@@ -31,12 +31,24 @@ def list_pub(pubs, entry, f, num, name_formats, include_year=True):
 # presentations (talk/poster)
 def list_pres(pres_info, f, include_year=True):
     if include_year:
-        year = str(pres_info['date'][:4])
+        year = str(pres_info['date'][:-6])
     else:
         year = ""
-    # scooches title back a bit to line up with next line
-    f.write(cvItem_text(year, '', "\hspace{-1.5mm}"+pres_info['title'], pres_info['venue']))
 
+    title = "\hspace{-1.5mm}" + pres_info['title']
+
+    # hacky fix for several posters that had awkward line breaks
+    title = title.replace("Characterization and Bayesian Inference", "Characterization and Bayesian\\newline Inference")
+    
+    # scooches title back a bit to line up with next line
+    f.write(cvItem_text(year, '', title, pres_info['venue']))
+
+
+    
+def list_service(serv_info, f):
+    date_str = serv_info['date_str'].replace(' - ', ' -- ')
+    title = serv_info['title'].replace("School of Engineering", "School of\\newline Engineering")
+    f.write(cvItem_text(date_str, serv_info['title'], serv_info['venue'], ''))
 
 # citation stuff
 def get_citation(pubs, entry, to_bold):

@@ -2,3 +2,6 @@ Jerry/*
 old/*
 __pycache__/*
 *~
+*.aux
+*.log
+*.out

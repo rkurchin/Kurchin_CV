@@ -12,6 +12,10 @@ talks_fpath = "../rkurchin.github.io/markdown_generator/talks.tsv"
 posters_fpath = "../rkurchin.github.io/markdown_generator/posters.tsv"
 service_fpath = "../rkurchin.github.io/markdown_generator/service.tsv"
 
+# can exclude some posters to keep CV from running over pages
+#posters_exclude = [3, 4, 12]
+posters_exclude = []
+
 # define paths to TeX outputs
 pubs_texpath = "inputs/pubs.tex"
 awards_texpath = "inputs/awards.tex"
@@ -24,23 +28,41 @@ service_texpath = "inputs/service.tex"
 sections = ["awards", "talks", "posters", "service"]
 sections_files = {"awards":awards_fpath, "talks":talks_fpath, "posters":posters_fpath, "service":service_fpath}
 sections_tex = {"awards":awards_texpath, "talks":talks_texpath, "posters":posters_texpath, "service":service_texpath}
-sections_fcns = {"awards":list_award, "talks":list_pres, "posters": list_pres} # add service
+sections_fcns = {"awards":list_award, "talks":list_pres, "posters": list_pres, "service":list_service}
 
 # write out the TeX files
-for sec in sections[:-1]:
+for sec in sections:
     # read in the data
     datafile = sections_files[sec]
     info = pd.read_csv(datafile, sep="\t", header=0)
+
+    if sec == "posters":
+        info.drop(posters_exclude, inplace=True)
+    
     texfile = sections_tex[sec]
     list_func = sections_fcns[sec]
 
     with open(texfile,'w') as f:
         # list first one explicitly
-        list_func(dict(info.iloc[0]), f)
+        first_line = dict(info.iloc[0])
+        
+        # add a little fudge space, not sure what in .cls file makes this necessary...
+        if sec=="service":
+            first_line["date_str"] = "\hspace{-1.5mm}" + first_line["date_str"]
+        else:
+            first_line["date"] = "\hspace{-1.5mm}" + first_line["date"]
+
+        list_func(first_line, f)
+
         year = info.iloc[0].date[:4]
+        if sec=="service":
+            year = info.iloc[0].date_str
+
         # then iterate through and print year only when it changes
         for row, item in info.iloc[1:].iterrows():
-            if item.date[:4]==year:
+            if sec=="service":
+                list_func(dict(item), f)
+            elif item.date[:4]==year:
                 list_func(dict(item), f, include_year=False)
             else:
                 year = item.date[:4]
