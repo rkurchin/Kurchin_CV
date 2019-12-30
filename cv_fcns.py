@@ -42,8 +42,6 @@ def list_pres(pres_info, f, include_year=True):
     
     # scooches title back a bit to line up with next line
     f.write(cvItem_text(year, '', title, pres_info['venue']))
-
-
     
 def list_service(serv_info, f):
     date_str = serv_info['date_str'].replace(' - ', ' -- ')

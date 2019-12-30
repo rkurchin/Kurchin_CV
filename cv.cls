@@ -180,7 +180,7 @@
 % optional first argument allows extra squish, useful for last line
 % before a subheader because spacing ends up really big
 \newcommand{\lineitem}[3][\@fudgespace] {
-    #2 & #3 \\
+    \hspace{-1.5mm}#2 & #3 \\
     &\\[#1]
 }
 
