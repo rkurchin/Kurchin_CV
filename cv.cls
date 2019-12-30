@@ -134,9 +134,6 @@
     {\color{CMUlightgrey}\hrule height 1.5pt}
 
     % use a table to get the column on the left
-    %\setlength\lastwidth{\textwidth-#3}%
-    %\begin{longtable}{@{} p{#3} p{\lastwidth}}
-    %\setlength\lastwidth{\textwidth-#3}%
     \begin{longtable}{@{} p{#3} p{\textwidth-#3-0.4cm}}
 }
 {
