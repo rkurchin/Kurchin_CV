@@ -1,5 +1,5 @@
 # Kurchin_CV
-This is the code I use for maintaining my CV. To see what the output looks like, take a look at the `CV.pdf` file in this repo. It’s reasonably customizable; I’ll provide basic info here, you can also check out this blog post (link to come) for more details about my choices in putting this together!
+This is the code I use for maintaining my CV. To see what the output looks like, take a look at the `CV.pdf` file in this repo. It’s reasonably customizable; I’ll provide basic info here, you can also check out [this blog post](https://rkurchin.github.io/posts/2019/12/holiday-cv-revamp) for more details about my choices in putting this together!
 
 **If you use this for your own CV, feel free to adapt but please fork this repo and credit me as well as the original authors (see below).**
 
