@@ -14,7 +14,7 @@ service_fpath = "../rkurchin.github.io/markdown_generator/service.tsv"
 
 # can exclude some posters to keep CV from running over pages
 #posters_exclude = [3, 4, 12]
-posters_exclude = []
+posters_exclude = [4, 12]
 
 # define paths to TeX outputs
 pubs_texpath = "inputs/pubs.tex"
