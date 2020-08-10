@@ -39,23 +39,32 @@ def list_pres(pres_info, f, include_year=True):
 
     # hacky fix for several posters that had awkward line breaks
     title = title.replace("Characterization and Bayesian Inference", "Characterization and Bayesian\\newline Inference")
-    
+
     # scooches title back a bit to line up with next line
     f.write(cvItem_text(year, '', title, pres_info['venue']))
-    
+
 def list_service(serv_info, f):
     date_str = serv_info['date_str'].replace(' - ', ' -- ')
     title = serv_info['title'].replace("School of Engineering", "School of\\newline Engineering")
     f.write(cvItem_text(date_str, serv_info['title'], serv_info['venue'], ''))
 
 # citation stuff
+
+# stuff for truncating author list is unconscionably janky right now and will break if I ever become a supervising author, if not sooner...
 def get_citation(pubs, entry, to_bold):
-    # original code for this function from Giuseppe Romano
+    # original code for this function from Giuseppe Romano, I adapted it
 
     data = pubs.entries[entry]
 
     # author list
+    max_auths = 5 # max number to list out (-1 because 0-indexed)
+    et_al_after = 2 # if more than six, put et al. after this index (this+1 many authors)
     n = len(data.persons['author'])
+    if n > max_auths:
+        et_al = True
+    else:
+        et_al = False
+    found_me = False
     strc = ''
     for i,au in enumerate(data.persons['author']):
 
@@ -71,13 +80,21 @@ def get_citation(pubs, entry, to_bold):
 
         if author in to_bold:
             author = "\\textbf{{{a}}}".format(a=author)
-
-        if i < n-1:
+            found_me = True
             strc += author
             strc += ', '
+
+        if et_al and found_me and i>et_al_after:
+            if "et al." not in strc:
+                strc += "et al."
         else:
-            strc += author
-            strc += '. '
+            if i < n-1:
+                if not author in strc:
+                    strc += author
+                    strc += ', '
+            else:
+                strc += author
+                strc += '. '
 
     # everything else
     if 'url' in data.fields.keys():
@@ -88,9 +105,11 @@ def get_citation(pubs, entry, to_bold):
     strc += r'''``''' + data.fields['title'] + r'''.'' '''
     for w in data.fields['journal'].split():
         strc += '\href{' + url + '}{' + '\\textit{' + w + '}' + '} '
-    if len(data.fields['volume'])> 0:
+    #if len(data.fields['volume'])> 0:
+    if 'volume' in data.fields:
         strc += '\href{''' + url + '}{' + str(data.fields['volume']) + '}, '
-    if len(data.fields['pages'])> 0:
+    #if len(data.fields['pages'])> 0:
+    if 'pages' in data.fields:
         strc += r'''\href{''' + url + r'''}{''' + str(data.fields['pages']) + '} '
     if len(data.fields['year'])> 0:
         strc += r'''\href{''' + url + r'''}{(''' + str(data.fields['year']) + ')}'
