@@ -31,7 +31,7 @@
     \definecolor{CMUdarkgrey}{cmyk}{0,0,0,.7}
     \definecolor{CMUlightgrey}{cmyk}{0,0,0,.3}
 
-\usepackage[left=1.6cm,top=1.4cm,right=1.6cm,bottom=1.6cm]{geometry} % Document margins    
+\usepackage[left=1.55cm,top=1.4cm,right=1.55cm,bottom=1.55cm]{geometry} % Document margins    
     
 %\pagestyle{empty} % To suppress page numbers
 \usepackage{fancyhdr} % footer with page number, name
