@@ -115,7 +115,7 @@
 \renewcommand{\document}{
   \ori@document  % Begin document
   \printname
-  \vspace{1ex}%
+%  \vspace{1ex}%
   \printaddress
 }
 
@@ -150,7 +150,6 @@
     \MakeUppercase{\bf #3} % Section title
     \sectionlineskip
     {\color{CMUlightgrey}\hrule height 1.5pt}
-
     % use a table to get the column on the left, including a separate column for pub number
     \setlength\firstwidth{#2-0.95cm }
     \begin{longtable}{@{} p{\firstwidth} p{0.6cm} p{\textwidth-#2-0.5cm}}
@@ -169,7 +168,7 @@
 
 % 3 arguments: year, number, citation
 \newcommand{\pubsItem}[3] {
-    #1 & [#2] & #3\\
+  #1 & [#2] & #3\\
      & & \\[\@fudgespace]
 }
 
