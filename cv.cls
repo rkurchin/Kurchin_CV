@@ -87,8 +87,8 @@
   \begingroup
     \begin{tabularx}{\textwidth}{@{} X r @{}}
     \@uni        & \href{mailto:\@email}{\@email} \\
-    \@addressone       & \href{https://\@website}{\@website} \\
-    \@addresstwo & \href{\@scholar}{Google Scholar} \\
+    \@addresstwo       & \href{https://\@website}{\@website} \\
+    % \@addresstwo &  \\
     \end{tabularx}
   \endgroup
   \par
@@ -147,7 +147,7 @@
 {
     \def\@fudgespace{#1}
     \sectionskip
-    \MakeUppercase{\bf #3} % Section title
+    \MakeUppercase{\bf #3} (\href{\@scholar}{Google Scholar}) % Section title
     \sectionlineskip
     {\color{CMUlightgrey}\hrule height 1.5pt}
     % use a table to get the column on the left, including a separate column for pub number
