@@ -41,7 +41,7 @@ def list_pres(pres_info, f, include_year=True):
     title = title.replace("Characterization and Bayesian Inference", "Characterization and Bayesian\\newline Inference")
 
     # scooches title back a bit to line up with next line
-    f.write(cvItem_text(year, '', title, pres_info['venue']))
+    f.write(cvItem_text(year, '', title, pres_info['venue'] + ", " + pres_info["location"]))
 
 def list_service(serv_info, f):
     date_str = serv_info['date_str'].replace(' - ', ' -- ')

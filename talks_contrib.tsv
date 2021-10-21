@@ -1,0 +1,8 @@
+title	type	url_slug	venue	date	location	talk_url	description
+Introducing Chemellia: Machine Learning, with Atoms	Talk	chemellia_jc21	JuliaCon	2021-07-30	online		
+Building a Chemistry and Materials Science Ecosystem in Julia	Discussion Leader	juliamolsim_jc21	JuliaCon	2021-07-28	online		I organized and led a discussion with developers and major stakeholders to move towards consensus on methods and interfaces for quantum and molecular simulation in the Julia programming language
+Computational Screening for Defect-Tolerant Semiconductors	Talk	talk-2	Gordon Research Seminar on Defects in Semiconductors	2018-08-18	"New London, NH"	/files/20180818_GRS_defects.pdf	Invited talk about my defect tolerance work at the Gordon Research Seminar
+Structural and Chemical Features Contributing to Defect Tolerance of Binary Semiconductors	Talk	talk-3	Blue Waters Research Symposium	2018-06-04	"Sunriver, OR"	https://www.youtube.com/watch?v=dubpNMMxc2k&index=12	Oral presentation at the Blue Waters symposium at the conclusion of my fellowship year. Click title to watch video!
+Toward Quantitative Metrics to Screen for Defect Tolerance in Novel Semiconducting Materials	Talk	talk-4	Materials Research Society Fall Meeting and Exhibit	2017-11-28	"Boston, MA"	/files/20171128_Fall_MRS.pdf	My first oral presentation at a conference! I spoke about my DFT work on defect tolerance.
+Cross-Sectional EBIC Characterization of III-V Semiconductors for Photovoltaic Applications	Talk	talk-5	Yale Physics Department	2013-04-29	"New Haven, CT"		Undergraduate senior thesis presentation
+Improving Active Layer Performance of Hybrid Photovoltaics by Nano Imprinting with Bulk Metallic Glass	Talk	talk-6	Yale Physics Department	2012-04-27	"New Haven, CT"		Undergraduate research presentation
