@@ -7,16 +7,17 @@ name_formats = ["R. Kurchin", "R. C. Kurchin"]
 
 # define file paths to content
 pubs_fpath = "MyPapers.bib"
-awards_fpath = "../rkurchin.github.io/markdown_generator/awards.tsv"
+awards_fpath = "./tsv/awards.tsv"
 # talks_fpath = "../rkurchin.github.io/markdown_generator/talks.tsv"
-talks_contrib_fpath = "talks_contrib.tsv"
-talks_invited_fpath = "talks_invited.tsv"
-posters_fpath = "./posters.tsv"
+talks_contrib_fpath = "./tsv/talks_contrib.tsv"
+talks_invited_fpath = "./tsv/talks_invited.tsv"
+posters_fpath = "./tsv/posters.tsv"
 # service_fpath = "../rkurchin.github.io/markdown_generator/service.tsv"
 
 # can exclude some posters to keep CV from running over pages
 #posters_exclude = [3, 4, 12]
-posters_exclude = [4, 12]
+#posters_exclude = [4, 12]
+posters_exclude = []
 
 # define paths to TeX outputs
 pubs_texpath = "inputs/pubs.tex"
