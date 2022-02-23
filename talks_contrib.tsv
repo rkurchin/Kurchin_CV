@@ -1,4 +1,5 @@
 title	type	url_slug	venue	date	location	talk_url	description
+Non-equilibrium Electrochemical Phase Diagrams with Automatic Differentiation	Talk	ek_aps22	APS March Meeting	2022-03-18	"Chicago, IL"		
 Introducing Chemellia: Machine Learning, with Atoms	Talk	chemellia_jc21	JuliaCon	2021-07-30	online		
 Building a Chemistry and Materials Science Ecosystem in Julia	Discussion Leader	juliamolsim_jc21	JuliaCon	2021-07-28	online		I organized and led a discussion with developers and major stakeholders to move towards consensus on methods and interfaces for quantum and molecular simulation in the Julia programming language
 Computational Screening for Defect-Tolerant Semiconductors	Talk	talk-2	Gordon Research Seminar on Defects in Semiconductors	2018-08-18	"New London, NH"	/files/20180818_GRS_defects.pdf	Invited talk about my defect tolerance work at the Gordon Research Seminar

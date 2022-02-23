@@ -11,8 +11,8 @@ awards_fpath = "../rkurchin.github.io/markdown_generator/awards.tsv"
 # talks_fpath = "../rkurchin.github.io/markdown_generator/talks.tsv"
 talks_contrib_fpath = "talks_contrib.tsv"
 talks_invited_fpath = "talks_invited.tsv"
-posters_fpath = "../rkurchin.github.io/markdown_generator/posters.tsv"
-service_fpath = "../rkurchin.github.io/markdown_generator/service.tsv"
+posters_fpath = "./posters.tsv"
+# service_fpath = "../rkurchin.github.io/markdown_generator/service.tsv"
 
 # can exclude some posters to keep CV from running over pages
 #posters_exclude = [3, 4, 12]
@@ -29,10 +29,10 @@ service_texpath = "inputs/service.tex"
 
 # make dictionaries for easy indexing/readability
 # (there's probably a tidier way to do this...)
-sections = ["awards", "talks_invited", "talks_contrib", "posters", "service"]
-sections_files = {"awards":awards_fpath, "talks_invited":talks_invited_fpath, "talks_contrib":talks_contrib_fpath, "posters":posters_fpath, "service":service_fpath}
-sections_tex = {"awards":awards_texpath, "talks_invited":talks_invited_texpath, "talks_contrib":talks_contrib_texpath, "posters":posters_texpath, "service":service_texpath}
-sections_fcns = {"awards":list_award, "talks_invited":list_pres, "talks_contrib":list_pres, "posters": list_pres, "service":list_service}
+sections = ["awards", "talks_invited", "talks_contrib", "posters"] #, "service"]
+sections_files = {"awards":awards_fpath, "talks_invited":talks_invited_fpath, "talks_contrib":talks_contrib_fpath, "posters":posters_fpath} #, "service":service_fpath}
+sections_tex = {"awards":awards_texpath, "talks_invited":talks_invited_texpath, "talks_contrib":talks_contrib_texpath, "posters":posters_texpath} # , "service":service_texpath}
+sections_fcns = {"awards":list_award, "talks_invited":list_pres, "talks_contrib":list_pres, "posters": list_pres} #, "service":list_service}
 
 # write out the TeX files
 for sec in sections:
